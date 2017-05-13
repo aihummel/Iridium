@@ -111,6 +111,7 @@ class IridiumPanel extends JPanel {
 		}
 
 		private class FunctionPanel extends JPanel {
+			JLabel functionLabel;
 			JTextField f;
 			JComboBox<String> c;
 			private Color[] colors = new Color[] {Color.BLUE, Color.RED, new Color(0, 175, 0),
@@ -121,6 +122,9 @@ class IridiumPanel extends JPanel {
 
 			public FunctionPanel() {
 				setBackground(bg);
+				functionLabel = new JLabel("y =");
+				functionLabel.setForeground(Color.WHITE);
+				add(functionLabel);
 				f = new JTextField(null, null, l);
 				f.addActionListener(new GraphFunctListener());
 				add(f);

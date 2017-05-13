@@ -14,6 +14,9 @@ public class Function {
 	public Function(String f) throws Exception {
 		funct = f.trim();
 		tokens = new ArrayList<String>();
+		String temp = "";
+		for (char ch: funct.toCharArray()) if (ch!=' ') temp += ch;
+		funct = temp;
 		while (funct.charAt(0)=='('&&findCloseParen(0)==funct.length()-1)
 			funct = funct.substring(1, funct.length()-1);
 		if (funct.charAt(0)=='-') funct = "0"+funct;
